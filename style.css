@@ -1,0 +1,25 @@
+.button {
+  border: 0;
+  background: #404040;
+  width: 74px;
+  height: 74px;
+  transition: 100ms all ease;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: 10px;
+  font-size: 36px;
+}
+
+.button:hover {
+    opacity: 0.5;
+}
+
+.button.nbr {
+
+  color: white;
+}
+
+.button.dot {
+  font-size: 36px;
+  color: white;
+}

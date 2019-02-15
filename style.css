@@ -1,13 +1,34 @@
+.container {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.calculator {
+  position: absolute;
+  width: 300px;
+  height: 460px;
+  background: rgba(75,75,75,.65);
+  padding: 10px; 10px;
+  border-radius: 8px;
+
+}
+
+.display {
+  width: 300px;
+  height: 100px;
+}
+
 .button {
   border: 0;
   background: #404040;
-  width: 74px;
-  height: 74px;
+  width: 60px;
+  height: 60px;
   transition: 100ms all ease;
   cursor: pointer;
   border-radius: 50%;
-  margin: 10px;
-  font-size: 36px;
+  margin: 6px;
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Ultra Light", "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 30px;
 }
 
 .button:hover {

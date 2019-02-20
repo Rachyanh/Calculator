@@ -9,31 +9,34 @@
 
 <body>
   <div class='calculator'>
-    <div class='display'>
+    <div class='display' >0
     </div>
 
-    <button class='button nbr'>AC</button>
-    <button class='button nbr'>+/-</button>
-    <button class='button nbr'>%</button>
-    <button class='button nbr'>&divide;</button>
-    <br>
-    <button class='button nbr'>7</button>
-    <button class='button nbr'>8</button>
-    <button class='button nbr'>9</button>
-    <button class='button nbr'>&times;</button>
-    <br>
-    <button class='button nbr'>4</button>
-    <button class='button nbr'>5</button>
-    <button class='button nbr'>6</button>
-    <button class='button nbr'>-</button>
-    <br>
-    <button class='button nbr'>1</button>
-    <button class='button nbr'>2</button>
-    <button class='button nbr'>3</button>
-    <button class='button nbr'>+</button>
-    <br>
-    <button style='width: 134px; border-radius: 45px' class='button nbr'>0</button>
-    <button class='button nbr'>.</button>
-    <button class='button nbr'>=</button>
+    <div class='keys'>
+      <button id='ac' class='button nbr' onclick='ac()'>AC</button>
+      <button class='button nbr' onclick='neg()'>+/-</button>
+      <button class='button nbr' onclick='percent()'>%</button>
+      <button class='button nbr'>&divide;</button>
+      <br>
+      <button id='7' class='button nbr' onclick='nbr(7)'>7</button>
+      <button id='8' class='button nbr' onclick='nbr(8)'>8</button>
+      <button id='9' class='button nbr' onclick='nbr(9)'>9</button>
+      <button id='multiply' class='button nbr' onclick='multi()'>&times;</button>
+      <br>
+      <button id='4' class='button nbr' onclick='nbr(4)'>4</button>
+      <button id='5' class='button nbr' onclick='nbr(5)'>5</button>
+      <button id='6' class='button nbr' onclick='nbr(6)'>6</button>
+      <button id='minus' class='button nbr' onclick='minus()'>-</button>
+      <br>
+      <button id='1' class='button nbr' onclick='nbr(1)'>1</button>
+      <button id='2' class='button nbr' onclick='nbr(2)'>2</button>
+      <button id='3' class='button nbr' onclick='nbr(3)'>3</button>
+      <button id='plus' class='button nbr' onclick='plus()'>+</button>
+      <br>
+      <button style='width: 134px; border-radius: 45px' id='0' class='button nbr' onclick='zero()'>0</button>
+      <button id='decimal' class='button nbr' onclick='dec()'>.</button>
+      <button id='equal' class='button nbr' onclick='equal()'>=</button>
+    </div>
   </div>
+
 </body>

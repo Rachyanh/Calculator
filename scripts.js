@@ -2,13 +2,15 @@ var arr = []; //to store numbers pressed
 var arrNbr = 0; //number converted from array
 var first = 0; //to store first number pressed
 var second = 0; //to store second number pressed
-var operator = []; //to store operator pressed
+var operator = []; //to store operators pressed
 const button = document.querySelector('button');
 const display = document.querySelector('.display');
 
 function ac() {
   arr = [];
+  operator = [];
   first = 0;
+  second = 0;
   display.innerText = 0;
 }
 
@@ -73,9 +75,58 @@ function multi() {
   if (first === 0) {
     first = arrNbr;
     arr =[];
-    operator = '*';
-  } else {
+    operator.push('*');
+  } else if (operator[0] == '*') {
+    first = Number(first) * Number(arrNbr);
+    display.innerText = first;
+    arr = [];
+  } else if (operator[0] == '/') {
+    first = Number(first) / Number(arrNbr);
+    display.innerText = first;
+    arr = [];
+    operator[0] = '*';
+  } else if (operator.length == 1) { //case when first operator is +/-
     second = arrNbr;
+    arr = [];
+    operator.push('*');
+  } else if (operator[1] == '*') { //case when first operator is +/-, second is *
+    second = Number(second) * Number(arrNbr);
+    display.innerText = second;
+    arr = [];
+  } else { //case when first operator is +/-, second is /
+    second = Number(second) / Number(arrNbr);
+    display.innerText = second;
+    arr = [];
+    operator[1] = '*';
+  }
+}
+
+function divide() {
+  if (first === 0) {
+    first = arrNbr;
+    arr =[];
+    operator.push('/');
+  } else if (operator[0] == '*') {
+    first = Number(first) * Number(arrNbr);
+    display.innerText = first;
+    arr = [];
+  } else if (operator[0] == '/') {
+    first = Number(first) / Number(arrNbr);
+    display.innerText = first;
+    arr = [];
+    operator[0] = '/';
+  } else if (operator.length == 1) { //case when first operator is +/-
+    second = arrNbr;
+    arr = [];
+    operator.push('/');
+  } else if (operator[1] == '*') { //case when first operator is +/-, second is *
+    second = Number(second) * Number(arrNbr);
+    display.innerText = second;
+    arr = [];
+    operator[1] = '/';
+  } else {                         //case when first operator is +/-, second is /
+    second = Number(second) / Number(arrNbr);
+    display.innerText = second;
     arr = [];
   }
 }
@@ -85,18 +136,26 @@ function equal() {
   if (operator.length == 1) {
     if (operator[0] == '+') {
       outcome = Number(first) + Number(arrNbr);
-    } else if (operator == '-') {
+    } else if (operator[0] == '-') {
       outcome = Number(first) - Number(arrNbr);
-    } else if (operator == '*') {
+    } else if (operator[0] == '*') {
       outcome = Number(first) * Number(arrNbr);
-    } else if (operator == '/') {
+    } else if (operator[0] == '/') {
       outcome = Number(first) / Number(arrNbr);
     }
   } else {
     if (operator[0] == '+' ) {
-      outcome = Number(first) + Number(arrNbr);
+      if (operator[1] == '*') {
+        outcome = Number(first) + Number(second) * Number(arrNbr);
+      } else if (operator[1] == '/') {
+        outcome = Number(first) + Number(second) / Number(arrNbr);
+      }
     } else if (operator == '-') {
-      outcome = Number(first) - Number(arrNbr);
+      if (operator[1] == '*') {
+        outcome = Number(first) - Number(second) * Number(arrNbr);
+      } else if (operator[1] == '/') {
+        outcome = Number(first) - Number(second) / Number(arrNbr);
+      }
     }
   }
   display.innerText = outcome;

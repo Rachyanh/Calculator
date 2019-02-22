@@ -46,28 +46,116 @@ function percent() {
 }
 
 function plus() {
-  if (first === 0) {
+  if (operator.length == 0) {  //for a+
     first = arrNbr;
     arr =[];
     arrNbr = 0;
     operator.push('+');
-  } else {
-    display.innerText = Number(first) + Number(arrNbr);
-    first = Number(first) + Number(arrNbr);
-    arr = [];
+  } else if (operator.length ==1) { //for a+b+
+      if (operator[0] == '+') {
+      first = Number(first) + Number(arrNbr);
+      display.innerText = first;
+      arr = [];
+    } else if (operator[0] == '-') { //for a-b+
+      first = Number(first) - Number(arrNbr);
+      display.innerText = first;
+      arr = [];
+      operator[0] = '+';
+    } else if (operator[0] == '*') { //for a*b+
+      first = Number(first) * Number(arrNbr);
+      display.innerText = first;
+      arr = [];
+      operator[0] = '+';
+    } else if (operator[0] == '/') { //for a/b+
+      first = Number(first) / Number(arrNbr);
+      display.innerText = first;
+      arr = [];
+      operator[0] = '+';
+    }
+  } else if (operator[0] == '+') { //for a+b*c+ and a+b/c+
+    if (operator[1] == '*') {
+      first = Number(first) + Number(second) * Number(arrNbr);
+      display.innerText = first;
+      second = 0;
+      arr = [];
+      operator = ['+'];
+    } else if (operator[1] == '/') {
+      first = Number(first) + Number(second) / Number(arrNbr);
+      display.innerText = first;
+      second = 0;
+      arr = [];
+      operator = ['+'];
+    }
+  } else if (operator[0] == '-') { //for a-b*c+ and a-b/c+
+    if (operator[1] == '*') {
+      first = Number(first) - Number(second) * Number(arrNbr);
+      display.innerText = first;
+      second = 0;
+      arr = [];
+      operator = ['+'];
+    } else if (operator[1] == '/') {
+      first = Number(first) - Number(second) / Number(arrNbr);
+      display.innerText = first;
+      second = 0;
+      arr = [];
+      operator = ['+'];
+    }
   }
 }
 
 function minus() {
-  if (first === 0) {
+  if (operator.length == 0) {
     first = arrNbr;
     arr =[];
     arrNbr = 0;
     operator.push('-');
-  } else {
-    display.innerText = Number(first) - Number(arrNbr);
-    first = Number(first) - Number(arrNbr);
+  } else if (operator[0] == '+') {
+    first = Number(first) + Number(arrNbr);
+    display.innerText = first;
     arr = [];
+    operator[0] = '-';
+  } else if (operator[0] == '-') {
+    first = Number(first) - Number(arrNbr);
+    display.innerText = first;
+    arr = [];
+  } else if (operator[0] == '*') {
+    first = Number(first) * Number(arrNbr);
+    display.innerText = first;
+    arr = [];
+    operator[0] = '-';
+  } else if (operator[0] == '/') {
+    first = Number(first) / Number(arrNbr);
+    display.innerText = first;
+    arr = [];
+    operator[0] = '-';
+  } else if (operator[0] == '+') { //for a+b*c- and a+b/c-
+    if (operator[1] == '*') {
+      first = Number(first) + Number(second) * Number(arrNbr);
+      display.innerText = first;
+      second = 0;
+      arr = [];
+      operator = ['-'];
+    } else if (operator[1] == '/') {
+      first = Number(first) + Number(second) / Number(arrNbr);
+      display.innerText = first;
+      second = 0;
+      arr = [];
+      operator = ['-'];
+    }
+  } else if (operator[0] == '-') { //for a-b*c- and a-b/c-
+    if (operator[1] == '*') {
+      first = Number(first) - Number(second) * Number(arrNbr);
+      display.innerText = first;
+      second = 0;
+      arr = [];
+      operator = ['-'];
+    } else if (operator[1] == '/') {
+      first = Number(first) - Number(second) / Number(arrNbr);
+      display.innerText = first;
+      second = 0;
+      arr = [];
+      operator = ['-'];
+    }
   }
 }
 

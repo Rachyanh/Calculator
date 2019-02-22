@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="scripts.js"></script>
-</head>
+  <head>
+      <meta charset="UTF-8">
+      <title>Calculator</title>
+      <link rel="stylesheet" href="style.css">
 
-<body>
-  <div class='calculator'>
-    <div class='display'>0</div>
+  </head>
 
-    <div class='keys'>
-      <button id='ac' class='button nbr' onclick='ac()'>AC</button>
-      <button class='button nbr' onclick='neg()'>+/-</button>
-      <button class='button nbr' onclick='percent()'>%</button>
-      <button class='button nbr'>&divide;</button>
-      <br>
-      <button id='7' class='button nbr' onclick='nbr(7)'>7</button>
-      <button id='8' class='button nbr' onclick='nbr(8)'>8</button>
-      <button id='9' class='button nbr' onclick='nbr(9)'>9</button>
-      <button id='multiply' class='button nbr' onclick='multi()'>&times;</button>
-      <br>
-      <button id='4' class='button nbr' onclick='nbr(4)'>4</button>
-      <button id='5' class='button nbr' onclick='nbr(5)'>5</button>
-      <button id='6' class='button nbr' onclick='nbr(6)'>6</button>
-      <button id='minus' class='button nbr' onclick='minus()'>-</button>
-      <br>
-      <button id='1' class='button nbr' onclick='nbr(1)'>1</button>
-      <button id='2' class='button nbr' onclick='nbr(2)'>2</button>
-      <button id='3' class='button nbr' onclick='nbr(3)'>3</button>
-      <button id='plus' class='button nbr' onclick='plus()'>+</button>
-      <br>
-      <button style='width: 134px; border-radius: 45px' id='0' class='button nbr' onclick='zero()'>0</button>
-      <button id='decimal' class='button nbr' onclick='dec()'>.</button>
-      <button id='equal' class='button nbr' onclick='equal()'>=</button>
+  <body>
+    <div class='calculator'>
+      <div class='display' >0
+      </div>
+
+      <div class='keys'>
+        <button id='ac' class='button nbr' onclick='ac()'>AC</button>
+        <button class='button nbr' onclick='neg()'>+/-</button>
+        <button class='button nbr' onclick='percent()'>%</button>
+        <button class='op' onclick='divide()'>&divide;</button>
+        <br>
+        <button id='7' class='nbr' onclick='nbr(7)'>7</button>
+        <button id='8' class='nbr' onclick='nbr(8)'>8</button>
+        <button id='9' class='nbr' onclick='nbr(9)'>9</button>
+        <button id='multiply' class='op' onclick='multi()'>&times;</button>
+        <br>
+        <button id='4' class='nbr' onclick='nbr(4)'>4</button>
+        <button id='5' class='nbr' onclick='nbr(5)'>5</button>
+        <button id='6' class='nbr' onclick='nbr(6)'>6</button>
+        <button id='minus' class='op' onclick='minus()'>-</button>
+        <br>
+        <button id='1' class='nbr' onclick='nbr(1)'>1</button>
+        <button id='2' class='nbr' onclick='nbr(2)'>2</button>
+        <button id='3' class='nbr' onclick='nbr(3)'>3</button>
+        <button id='plus' class='op' onclick='plus()'>+</button>
+        <br>
+        <button style='width: 134px; border-radius: 45px' id='0' class='nbr' onclick='zero()'>0</button>
+        <button id='decimal' class='nbr' onclick='dec()'>.</button>
+        <button id='equal' class='op' onclick='equal()'>=</button>
+      </div>
     </div>
-  </div>
-
-</body>
+    <script src="scripts.js"></script>
+  </body>
+</html>

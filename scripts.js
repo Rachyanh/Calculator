@@ -9,8 +9,10 @@ const display = document.querySelector('.display');
 function ac() {
   arr = [];
   operator = [];
+  arrNbr = 0;
   first = 0;
   second = 0;
+  outcome = 0;
   display.innerText = 0;
 }
 

@@ -7,7 +7,7 @@
   position: absolute;
   width: 320px;
   height: 480px;
-  background: rgba(75,75,75,.65);
+  background: #333333;
   padding: 10px;
   border-radius: 8px;
   box-sizing: border-box;
@@ -39,7 +39,7 @@
 
 button {
   border: 0;
-  background: #404040;
+  background: #A4978E;
   width: 60px;
   height: 60px;
   transition: 100ms all ease;
@@ -61,7 +61,14 @@ button:focus {
   outline: 0;
 }
 
+.top {
+  background: #525B56;
+}
+
+.op {
+  background: #BE9063;
+}
 .op:focus {
   outline: 0;
-  opacity: 0.6;
+  background: #e4913f;
 }

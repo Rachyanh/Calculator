@@ -160,7 +160,7 @@ function minus() {
 }
 
 function multi() {
-  if (first === 0) {
+  if (first == 0) {
     first = arrNbr;
     arr =[];
     operator.push('*');
@@ -190,7 +190,7 @@ function multi() {
 }
 
 function divide() {
-  if (first === 0) {
+  if (first == 0) {
     first = arrNbr;
     arr =[];
     operator.push('/');
@@ -247,7 +247,8 @@ function equal() {
     }
   }
   display.innerText = outcome;
-  first = outcome;
+  arrNbr = outcome;
+  first = 0;
   arr = [];
   operator = [];
 }
